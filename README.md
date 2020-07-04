@@ -5,4 +5,4 @@ para entrar em contato com o entregador.
 
 **Nota:** *Este é um MVP para avaliação e por fim ser desenvolvido mais profundamente para uso real*
 
-![chat image](https://i.imgur.com/Sly3xYB.png)
+![chat image](https://i.imgur.com/Sly3xYB.png) ![chat image](https://i.imgur.com/mD9XBCq.png)
