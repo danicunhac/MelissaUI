@@ -20,7 +20,7 @@ export default class ChatPopup extends Component {
     };
     this.handlePopoutClick = this.handlePopoutClick.bind(this);
   }
-  
+
   chatContainer = React.createRef();
 
   componentDidMount() {
@@ -85,14 +85,8 @@ export default class ChatPopup extends Component {
       if (response.data.map) {
         const map = document.createElement("img");
         map.src = response.data.map;
+        this.state.messageList.concat(response.data.map);
         messages.appendChild(map);
-      }
-
-      if (response.data.answer2) {
-        const evaluation = document.createElement("div");
-        var evaluationMessage = `<div class="server-message">${response.data.answer2}</div>`;
-        evaluation.innerHTML = evaluationMessage;
-        messages.appendChild(evaluation);
       }
 
       input.value = "";
@@ -103,6 +97,13 @@ export default class ChatPopup extends Component {
         () => this.scrollToMyRef()
       );
     }
+  };
+
+  scrollToMyRef = () => {
+    const scroll =
+      this.chatContainer.current.scrollHeight -
+      this.chatContainer.current.clientHeight;
+    this.chatContainer.current.scrollTo(0, scroll);
   };
 
   renderChat = () => {
